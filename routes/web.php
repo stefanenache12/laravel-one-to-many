@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DasboardController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Guest\MainController;
+use App\Http\Controllers\Admin\TypeController;
 
 Route::get('/',[MainController::class, 'index'])->name('guest.welcome');
 Route::get('/projects/{id}',[MainController::class, 'show'])->name('guest.show');
@@ -29,6 +30,8 @@ Route::middleware(['auth', 'verified'])
     Route::get('/dashboard', [DasboardController::class, 'dashboard'])->name('dashboard');
 
     Route::resource('projects',ProjectController::class);
+
+    Route::resource('types',TypeController::class);
 });
 
 require __DIR__.'/auth.php';

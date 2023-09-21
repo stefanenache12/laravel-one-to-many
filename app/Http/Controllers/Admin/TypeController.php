@@ -3,20 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Project;
 use Illuminate\Http\Request;
 
 use App\Models\Type;
-
-class ProjectController extends Controller
+class TypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {   
-        $projects = Project::all();
-        return view('admin.projects.index',compact('projects'));
+    {
+        $types = Type::all();
+
+        return view('admin.types.index', compact('types'));
     }
 
     /**
@@ -24,8 +23,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $types = Type::all();
-        return view('admin.projects.create',compact('types'));
+        //
     }
 
     /**
@@ -33,19 +31,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $formData = $request->all();
-
-        $project = new Project();
-
-        $project -> title = $formData['title'];
-        $project -> description = $formData['description'];
-        $project -> img_link = $formData['img_link'];
-        $project -> languages = $formData['languages'];
-        $project -> type_id = $formData['type_id'];
-
-        $project->save();
-
-        return redirect()->route('admin.projects.index');
+        //
     }
 
     /**
@@ -60,12 +46,8 @@ class ProjectController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-        
     {
-        
-        $project = Project::findOrFail($id);
-
-        return view('admin.projects.edit',compact('project'));
+        //
     }
 
     /**
@@ -81,11 +63,6 @@ class ProjectController extends Controller
      */
     public function destroy(string $id)
     {
-        $project = Project::findOrFail($id);
-
-        $project -> delete();
-
-        return redirect()->route('admin.projects.index');
-
+        //
     }
 }
