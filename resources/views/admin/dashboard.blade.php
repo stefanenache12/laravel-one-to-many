@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-body bg-dark">
                         <h1 class="text-center text-light">
-                            WELCOME ON YOU DASHBOARD!
+                            WELCOME ON YOUR DASHBOARD!
                         </h1>
                     </div>
                 </div>
