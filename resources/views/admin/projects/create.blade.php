@@ -51,6 +51,24 @@
                     <input type="text" maxlength="64" class="form-control" id="languages" name="languages" value="{{ old('languages') }}" placeholder="Php,JavaScript..." >
                 </div>
 
+                <div class="mb-3">
+                    <label for="type_id" class="form-label">Type</label>
+                    <select class="form-select" id="type_id" name="type_id">
+                        <option value="">Select a type...</option>
+                        @foreach ($types as $type)
+                            <option
+                                value="{{ $type->id }}"
+
+                                @if (old('type_id') == $type->id)
+                                    selected
+                                @endif
+                                >
+                                {{ $type->title }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <button type="submit" class="m-auto col-12 btn btn-success">
                     ADD PROJECT
                 </button>
