@@ -64,16 +64,27 @@ class ProjectController extends Controller
     {
         
         $project = Project::findOrFail($id);
+        $types = Type::all();
 
-        return view('admin.projects.edit',compact('project'));
+        return view('admin.projects.edit',compact('project','types'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $formData = $request->all();
+
+        $project -> title = $formData['title'];
+        $project -> description = $formData['description'];
+        $project -> img_link = $formData['img_link'];
+        $project -> languages = $formData['languages'];
+        $project -> type_id = $formData['type_id'];
+
+        $project->save();
+
+        return redirect()->route('admin.projects.index');
     }
 
     /**

@@ -10,7 +10,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Projects</th>
-                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -29,7 +28,7 @@
                                 @endforeach
                             </ul>
                         </td>
-                        <td>
+                        {{-- <td>
                             <a href="{{ route('admin.types.edit',['type' => $type->id]) }}">
                                 <button class="btn btn-outline-warning">
                                     UPDATE
@@ -47,7 +46,7 @@
                                     DELETE
                                 </button>
                             </form>
-                        </td>
+                        </td> --}}
                     </tr>
               @endforeach
             </tbody>

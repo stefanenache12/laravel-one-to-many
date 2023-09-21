@@ -10,6 +10,7 @@
         <div class="col-8 m-auto p-5">
             <form action="{{ route('admin.projects.update', ['project' => $project->id]) }}" method="POST">
                 @csrf
+                @method('PUT')
                 
                 <div class="mb-3">
                     <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
@@ -51,8 +52,26 @@
                     <input type="text" maxlength="64" class="form-control" id="languages" name="languages" value="{{ old('languages',$project->languages) }}" placeholder="Php,JavaScript..." >
                 </div>
 
+                <div class="mb-3">
+                    <label for="type_id" class="form-label">Type</label>
+                    <select class="form-select" id="type_id" name="type_id">
+                        <option value="">Select a type</option>
+                        @foreach ($types as $type)
+                            <option
+                                value="{{ $type->id }}"
+
+                                @if (old('type_id', $project->type_id) == $type->id)
+                                    selected
+                                @endif
+                                >
+                                {{ $type->title }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <button type="submit" class="m-auto col-12 btn btn-success">
-                    ADD PROJECT
+                    EDIT PROJECT
                 </button>
             </form>
         </div>
