@@ -3,8 +3,11 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
-    <div class="row w-75 m-auto shadow border">
-        <table class="table text-center">
+    <div class="row w-75 m-auto ">
+        <h1 class="mt-4 mb-4">
+            Types of the projects
+        </h1>
+        <table class="table text-center mt-2 shadow border rounded">
             <thead class="text-center">
               <tr>
                 <th scope="col">#</th>

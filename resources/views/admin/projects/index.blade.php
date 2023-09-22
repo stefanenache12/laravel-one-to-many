@@ -5,7 +5,7 @@
 @section('main-content')
     <div class="container w-75 d-flex p-3">
         <h2>
-            Add a new project
+            Your projects
         </h2>
         <a href="{{ route('admin.projects.create') }}" class="ms-3">
             <button class="btn btn-outline-success">
