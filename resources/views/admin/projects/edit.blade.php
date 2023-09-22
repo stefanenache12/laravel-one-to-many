@@ -3,11 +3,11 @@
 @section('page-title', 'EDIT')
 
 @section('main-content')
-    <div class="container m-auto">
+    <div class="container m-auto ">
         <h1 class="mt-3 mb-3 text-center">
             EDIT {{ $project->title }}
         </h1>
-        <div class="col-8 m-auto p-5">
+        <div class="col-8 m-auto p-5 border rounded shadow ">
             <form action="{{ route('admin.projects.update', ['project' => $project->id]) }}" method="POST">
                 @csrf
                 @method('PUT')

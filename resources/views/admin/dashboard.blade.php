@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-body bg-dark">
+                    <div class="card-body bg-dark border rounded shadow ">
                         <h1 class="text-center text-light">
                             WELCOME ON YOUR DASHBOARD!
                         </h1>

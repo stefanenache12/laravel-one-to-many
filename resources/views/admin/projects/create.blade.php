@@ -7,7 +7,7 @@
         <h1 class="mt-3 mb-3 text-center">
             INSERT A NEW PROJECT
         </h1>
-        <div class="col-8 m-auto p-5">
+        <div class="col-8 m-auto p-5 border rounded shadow ">
             <form action="{{ route('admin.projects.store') }}" method="POST">
                 @csrf
                 
